@@ -43,7 +43,7 @@ export default function Hero() {
             </div>
 
             {/* Name Heading */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-3">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-3 break-words">
               <span>M. M. A. Udari </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-violet-300 to-cyan-400">
                 Wathsala
@@ -51,7 +51,7 @@ export default function Hero() {
             </h1>
 
             {/* Subtitle / Role */}
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-300 mb-4 flex items-center justify-center lg:justify-start gap-2">
+            <h2 className="text-base sm:text-xl md:text-2xl font-semibold text-slate-300 mb-4 flex flex-wrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2">
               <span className="text-purple-400 font-mono">&lt;</span>
               <span>IT Undergraduate</span>
               <span className="text-slate-500">|</span>
@@ -144,8 +144,8 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Visual Frame with Udari's Image & Code Mockup */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-sm sm:max-w-md">
+          <div className="lg:col-span-5 flex justify-center mt-6 lg:mt-0">
+            <div className="relative w-full max-w-[270px] sm:max-w-sm lg:max-w-md">
               
               {/* Outer Decorative Glow Rings */}
               <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 opacity-40 blur-lg transition duration-1000 group-hover:opacity-100 animate-pulse-slow"></div>

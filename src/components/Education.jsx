@@ -26,9 +26,9 @@ export default function Education() {
         </div>
 
         {/* Vertical Timeline */}
-        <div className="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-12">
+        <div className="relative border-l-2 border-slate-800 ml-3 sm:ml-6 md:ml-32 space-y-10 sm:space-y-12">
           {educationTimeline.map((item, index) => (
-            <div key={index} className="relative pl-8 md:pl-10 group">
+            <div key={index} className="relative pl-6 sm:pl-8 md:pl-10 group">
               
               {/* Timeline Node Icon */}
               <div

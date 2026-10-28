@@ -202,7 +202,7 @@ export default function Contact() {
 
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-2xl bg-[#0E1322] border border-slate-800 relative">
+            <div className="p-4 sm:p-8 rounded-2xl bg-[#0E1322] border border-slate-800 relative">
               <h3 className="text-lg font-bold text-white mb-2">
                 Send a Direct Message
               </h3>

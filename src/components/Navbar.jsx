@@ -133,8 +133,8 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0B0F19]/95 backdrop-blur-xl border-b border-slate-800 px-4 pt-3 pb-6 animate-fadeIn">
-          <div className="flex flex-col gap-1.5">
+        <div className="md:hidden bg-[#070A12]/98 backdrop-blur-2xl border-b border-slate-800 px-4 pt-3 pb-6 shadow-2xl transition-all duration-300">
+          <div className="flex flex-col gap-2">
             {navItems.map((item) => {
               const isActive = activeSection === item.href.substring(1);
               return (
@@ -145,24 +145,26 @@ export default function Navbar() {
                     e.preventDefault();
                     handleLinkClick(item.href);
                   }}
-                  className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 flex items-center justify-between ${
                     isActive
-                      ? 'bg-purple-600/20 text-purple-400 border border-purple-500/30'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                      ? 'bg-gradient-to-r from-purple-600/30 to-indigo-600/20 text-purple-300 border border-purple-500/40 shadow-sm'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
                   }`}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {isActive && <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>}
                 </a>
               );
             })}
-            <div className="pt-3 mt-2 border-t border-slate-800">
+            <div className="pt-3 mt-2 border-t border-slate-800/80">
               <a
                 href={personalInfo.cvFile}
                 download="Udari_Wathsala_CV.pdf"
-                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white shadow-lg shadow-purple-600/20 active:scale-[0.98] transition-transform"
               >
                 <FileDown className="w-4 h-4" />
-                Download CV
+                <span>Download Curriculum Vitae</span>
               </a>
             </div>
           </div>

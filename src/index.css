@@ -6,12 +6,16 @@
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
   
   body {
     @apply bg-[#070A12] text-slate-200 antialiased selection:bg-purple-500/30 selection:text-purple-200;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    max-width: 100vw;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 

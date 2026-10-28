@@ -195,27 +195,32 @@ export default function Projects() {
 
       {/* Quick Details Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
-          <div className="relative w-full max-w-lg rounded-2xl bg-[#0E1322] border border-slate-700 p-6 shadow-2xl">
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-fadeIn"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setSelectedProject(null);
+          }}
+        >
+          <div className="relative w-full max-w-lg max-h-[88vh] overflow-y-auto rounded-2xl bg-[#0E1322] border border-slate-700 p-5 sm:p-6 shadow-2xl">
             {/* Close Button */}
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 p-1.5 rounded-lg text-slate-400 hover:text-white bg-slate-800 border border-slate-700"
+              className="absolute top-4 right-4 p-2 rounded-lg text-slate-400 hover:text-white bg-slate-800 border border-slate-700"
               aria-label="Close modal"
             >
               ✕
             </button>
 
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex flex-wrap items-center gap-2 mb-3 pr-8">
               <span className={`px-2.5 py-1 rounded-full text-xs font-mono font-medium border ${selectedProject.badgeColor}`}>
                 {selectedProject.category}
               </span>
               <span className="text-xs text-slate-400 font-mono">{selectedProject.subtitle}</span>
             </div>
 
-            <h3 className="text-xl font-bold text-white mb-2">{selectedProject.title}</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{selectedProject.title}</h3>
             
-            <p className="text-sm text-slate-300 leading-relaxed mb-4">
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
               {selectedProject.description}
             </p>
 
@@ -242,19 +247,19 @@ export default function Projects() {
               </div>
             </div>
 
-            <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-800">
+            <div className="flex flex-col sm:flex-row items-center justify-end gap-3 pt-4 border-t border-slate-800">
               <a
                 href={selectedProject.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 shadow-md"
               >
                 <Github className="w-4 h-4" />
                 <span>Visit GitHub Repo</span>
               </a>
               <button
                 onClick={() => setSelectedProject(null)}
-                className="px-4 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white bg-slate-800 border border-slate-700"
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-medium text-slate-300 hover:text-white bg-slate-800 border border-slate-700"
               >
                 Close
               </button>
